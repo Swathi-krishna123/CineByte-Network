@@ -1,4 +1,5 @@
 import 'package:cinebyte_network/screens/firstpage.dart';
+import 'package:cinebyte_network/screens/startingdate.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,9 +15,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: "CINEBYTE NETWORK",
         theme: ThemeData(scaffoldBackgroundColor:  const Color(0xff2D3037)),
-        initialRoute: '/',
+        initialRoute: '/startingdate',
         routes: {
           '/': (context) => Firstpage(),
+          '/startingdate': (context) => StartingDate(),
         });
   }
 }
