@@ -12,7 +12,8 @@ class Firstpage extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
-          image: DecorationImage(fit: BoxFit.cover,
+          image: DecorationImage(
+            fit: BoxFit.cover,
             image: AssetImage('assets/first page.png'),
           ),
         ),

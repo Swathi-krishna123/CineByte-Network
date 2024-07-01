@@ -1,20 +1,19 @@
+import 'package:cinebyte_network/customClasses/containerbutton.dart';
 import 'package:cinebyte_network/custom_attribues.dart';
+import 'package:cinebyte_network/user/menupage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Color color2 = const Color(0xff51555D);
-
-class MenuPage extends StatefulWidget {
-  const MenuPage({super.key});
+class SettingsdPage extends StatefulWidget {
+  const SettingsdPage({super.key});
 
   @override
-  State<MenuPage> createState() => _MenuPageState();
+  State<SettingsdPage> createState() => _SettingsdPageState();
 }
 
-class _MenuPageState extends State<MenuPage> {
+class _SettingsdPageState extends State<SettingsdPage> {
   @override
   Widget build(BuildContext context) {
-    final searchwidth = MediaQuery.of(context).size.width * 0.8;
     return Container(
       height: double.infinity,
       width: double.infinity,
@@ -25,13 +24,13 @@ class _MenuPageState extends State<MenuPage> {
         ),
       ),
       child: Scaffold(
-        appBar: appBar('Menu', Icons.arrow_back_ios_new),
+        appBar: appBar('Settings'),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               SizedBox(
-                width: searchwidth,
+                width: MediaQuery.of(context).size.width * 0.8,
                 child: SearchBar(
                   textInputAction: TextInputAction.search,
                   textStyle: const WidgetStatePropertyAll(TextStyle(
@@ -50,25 +49,16 @@ class _MenuPageState extends State<MenuPage> {
                       )),
                 ),
               ),
-              SizedBox(height: 50,),
-              Expanded(
-                child: SizedBox(width: searchwidth,
-                  child: GridView.builder(
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisSpacing: 30,
-                              mainAxisSpacing: 60,
-                              crossAxisCount: 2),
-                      itemCount: 4,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          height: 10,
-                          width: 10,
-                          color: Colors.blue,
-                        );
-                      }),
-                ),
-              )
+              InkWell(
+                onTap: () => Navigator.pushNamed(context, '/userprofile'),
+                child: Buttoncontainer(
+                    leadingicon: Icons.person_pin_outlined, title: 'Profile'),
+              ),
+              Buttoncontainer(leadingicon: Icons.call, title: 'Change Number'),
+              Buttoncontainer(
+                  leadingicon: Icons.help_outline, title: 'Help Center'),
+              Buttoncontainer(
+                  leadingicon: Icons.logout_rounded, title: 'Logout')
             ],
           ),
         ),

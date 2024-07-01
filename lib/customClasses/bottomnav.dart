@@ -1,9 +1,9 @@
 import 'package:cinebyte_network/customClasses/containerbutton.dart';
-import 'package:cinebyte_network/screens/gallerypage.dart';
-import 'package:cinebyte_network/screens/home_page.dart';
-import 'package:cinebyte_network/screens/menupage.dart';
-import 'package:cinebyte_network/screens/schedulepage.dart';
-import 'package:cinebyte_network/screens/settingspage.dart';
+import 'package:cinebyte_network/user/gallerypage.dart';
+import 'package:cinebyte_network/user/home_page.dart';
+import 'package:cinebyte_network/user/menupage.dart';
+import 'package:cinebyte_network/user/schedulepage.dart';
+import 'package:cinebyte_network/user/settingspage.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -29,8 +29,10 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
       body: Center(
         child: pages[_currentindex],
       ),
-      bottomNavigationBar: BottomNavigationBar(selectedIconTheme: IconThemeData(size: 35, color: color1),
-        elevation: 10,items: const [
+      bottomNavigationBar: BottomNavigationBar(
+        selectedIconTheme: IconThemeData(size: 35, color: color1),
+        elevation: 10,
+        items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'home',
@@ -51,12 +53,14 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
               icon: Icon(Icons.settings),
               label: 'Settings',
               backgroundColor: Color.fromARGB(255, 16, 16, 16)),
-        ], currentIndex: _currentindex,
+        ],
+        currentIndex: _currentindex,
         onTap: (int index) {
           setState(() {
             _currentindex = index;
           });
-        },),
+        },
+      ),
     );
   }
 }

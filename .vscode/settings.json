@@ -1,0 +1,11 @@
+{ 
+"files.maxMemoryForLargeFilesMB": 4096,
+"editor.renderWhitespace": "all",
+"editor.minimap.enabled": false,
+"dart.previewFlutterUiGuides": false,
+"dart.previewFlutterUiGuidesCustomTracking": false,
+"workbench.editor.enablePreview": false,
+"editor.formatOnSave": true,
+"extensions.ignoreRecommendations": true,
+"window.zoomLevel":0
+}

@@ -33,18 +33,31 @@ textFormField(TextEditingController controller, String text, IconData icon) {
   );
 }
 
-appBar(String text, IconData icon) {
+appBar(String text, {IconData? icon, tabbar}) {
   return AppBar(
-    toolbarHeight: 130,
-    leadingWidth: 120,
+    bottom: tabbar,
+    toolbarHeight: 100,
+    leadingWidth: 160,
     actionsIconTheme: const IconThemeData(color: Colors.white),
-    leading: Center(
-        child: Text(
-      text,
-      style: GoogleFonts.fugazOne(color: Colors.white, fontSize: 15),
-    )),
+    leading: Row(
+      children: [
+        SizedBox(
+          width: 20,
+        ),
+        Text(
+          text,
+          style: GoogleFonts.fugazOne(color: Colors.white, fontSize: 20),
+        ),
+      ],
+    ),
     actions: [
-      IconButton(onPressed: () {}, icon: Icon(icon)),
+      Builder(builder: (context) {
+        return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(icon));
+      }),
       SizedBox(
         width: 30,
       )

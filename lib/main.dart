@@ -1,9 +1,10 @@
 import 'package:cinebyte_network/customClasses/bottomnav.dart';
-import 'package:cinebyte_network/screens/firstpage.dart';
-import 'package:cinebyte_network/screens/home_page.dart';
-import 'package:cinebyte_network/screens/login.dart';
-import 'package:cinebyte_network/screens/register.dart';
-import 'package:cinebyte_network/screens/startingdate.dart';
+import 'package:cinebyte_network/user/firstpage.dart';
+import 'package:cinebyte_network/user/home_page.dart';
+import 'package:cinebyte_network/user/login.dart';
+import 'package:cinebyte_network/user/register.dart';
+import 'package:cinebyte_network/user/startingdate.dart';
+import 'package:cinebyte_network/user/user_profile.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,9 +21,8 @@ class MyApp extends StatelessWidget {
         title: "CINEBYTE NETWORK",
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.transparent,
-            appBarTheme: const AppBarTheme(color:Colors.transparent),
-            ),
-            
+          appBarTheme: const AppBarTheme(color: Colors.transparent),
+        ),
         initialRoute: '/login',
         routes: {
           '/': (context) => const Firstpage(),
@@ -30,7 +30,9 @@ class MyApp extends StatelessWidget {
           '/register': (context) => const RegisterPage(),
           '/login': (context) => const LoginPage(),
           '/homepage': (context) => const HomePage(),
-          '/CustomBottomNavigationBar':(context)=>const CustomBottomNavigationBar()
+          '/CustomBottomNavigationBar': (context) =>
+              const CustomBottomNavigationBar(),
+          '/userprofile': (context) => const UserProfile()
         });
   }
 }
